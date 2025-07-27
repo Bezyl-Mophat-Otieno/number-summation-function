@@ -6,11 +6,11 @@ using Microsoft.Extensions.Logging;
 
 namespace Sillivannah.Function;
 
-public class number_summation_csharp
+public class Numbersummationcsharp
 {
-    private readonly ILogger<number_summation_csharp> _logger;
+    private readonly ILogger<Numbersummationcsharp> _logger;
 
-    public number_summation_csharp(ILogger<number_summation_csharp> logger)
+    public Numbersummationcsharp(ILogger<Numbersummationcsharp> logger)
     {
         _logger = logger;
     }
