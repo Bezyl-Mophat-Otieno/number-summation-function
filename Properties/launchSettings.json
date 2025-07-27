@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "arithmetics_summation": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7030",
+      "launchBrowser": false
+    }
+  }
+}
