@@ -16,7 +16,7 @@ namespace Sillivannah.Function
             _logger = logger;
         }
 
-        [Function("number_summation_csharp")]
+        [Function("Numbersummationcsharp")]
         public async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")] HttpRequestData req)
         {
             var firstNumber = req.Query["firstNumber"];

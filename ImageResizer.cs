@@ -20,7 +20,16 @@ public class ImageResizer
     [Function(nameof(ImageResizer))]
     public async Task Run([BlobTrigger("uploads/{name}", Connection = "AzureWebJobsStorage")] Stream stream, string name)
     {
+
+        if (!name.EndsWith(".jpg", StringComparison.OrdinalIgnoreCase) &&
+        !name.EndsWith(".jpeg", StringComparison.OrdinalIgnoreCase) &&
+        !name.EndsWith(".png", StringComparison.OrdinalIgnoreCase))
+        {
+                _logger.LogInformation($"Skipping non-image file: {name}");
+                return;
+        }
         _logger.LogInformation($"Image uploaded: {name}");
+
 
         using var image = await Image.LoadAsync(stream);
         image.Mutate(x => x.Resize(200, 0)); // Resize width to 200px, keep aspect
